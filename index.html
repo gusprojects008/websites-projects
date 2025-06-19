@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como surgiu o Mascote do Android?</title>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'android';
+            src: url(fontes/idroid.otf) format(opentype);
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            background-color:rgb(167, 213, 236);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header {
+            background-image: linear-gradient(to top, rgba(7, 216, 7, 0.753), rgba(1, 141, 1, 0.945));
+            min-height: 150px;
+            text-align: center;
+            padding-top: 40px;
+            box-shadow: 1px 1px 5px black;
+        }
+        header > h1 {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: rgb(255, 255, 255);
+            text-shadow: 1px 1px 2px black;
+        }
+        header > p {
+            font-size: 1.5em;
+            color: white;
+            max-width: 600px;
+            padding-bottom: 30px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin: auto;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-shadow: 1px 1px 2px black;
+        }
+        nav {
+            display: inline-block;
+            background-image: linear-gradient(to bottom, rgb(57, 212, 57), rgba(71, 204, 71, 0.726));
+            padding: 3px;
+            box-shadow: 1px 1px 6px black;
+            margin-bottom: 15px;
+        }
+        nav > a {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1em;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 1px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.822);
+        }
+        nav > a:hover {
+            text-decoration:underline;
+            background-color: rgb(103, 194, 230);
+            border-radius: 6px;
+            padding: 3px;
+        }
+        main {
+            background-color: rgba(153, 252, 166, 0.918);
+            padding: 20px;
+            border-radius: 10px;
+            width: 1000px;
+            margin: auto;
+            box-shadow: 1px 1px 10px black;
+        }
+        article > h1 {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 2em;
+            font-family: 'android';
+            color: rgb(62, 226, 98);
+            padding-left: 15px;
+            text-shadow: 1px 1px 2px black;
+        }
+        article > p {
+            text-indent: 20px;
+        }
+        article > h2 {
+            font-family: 'android';
+            color: rgb(62, 226, 98);
+            text-shadow: 1px 1px 2px black;
+        }
+        article > p > a {
+            background-color: aquamarine;
+            border-radius: 5px;
+            text-decoration: solid;
+        }
+        article > p > a > abbr {
+            text-decoration: solid;
+        }
+        div {
+           text-align: center;
+        }
+        div#id1 {
+            background-color: rgb(33, 109, 31);
+            padding: 50px;
+            position:relative;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px black;
+        }
+        aside {
+            background-color: rgba(149, 221, 255, 0.726);
+            padding: 20px;
+            list-style-position: inside;
+            border-radius: 15px;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.418);  
+        }
+        aside > h2 {
+        color: aliceblue;
+        background-color: rgba(74, 233, 74, 0.836);
+        font-family: 'android';
+        font-size: 1.8em;
+        padding: 9px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        margin: -20px -20px -10px -20px;
+        }
+        aside > #ulp1 {
+        text-indent: 3px;
+        font-family: monospace;
+        font-size: 1.2em;
+        }
+        aside > #ullist1 {
+        columns: 2;
+        }
+        aside > #ullist1 > li {
+        list-style: "✔";
+        text-indent: 10px;
+        padding: 6px;
+        font-size: medium;
+        }
+        section > p {
+            text-indent: 10px;
+        }
+        section > p > strong {
+            color: darkolivegreen;
+        }
+        section > p > a {
+            color: chartreuse;
+            text-decoration: solid;
+        }
+        section > p > a:hover {
+            text-decoration: underline;
+        }
+        #pfora {
+            text-align: center;
+            font-weight: lighter;
+        }
+        footer {
+        text-align: center;
+        width: 300px;
+        padding: 10x;
+        margin: auto;
+    }
+    footer > p {
+        background-color:aquamarine; 
+        padding: 10px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    footer > p > a {
+        color: rgb(65, 75, 212);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.7;
+        text-decoration: solid;
+    }
+    footer > p > a:hover {
+        background-color:rgba(72, 72, 218, 0.712);
+        border-radius: 5px;
+        padding: 4px;
+    }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+    <h1>CURIOSIDADES DA TECNOLOGIA!</h1>
+    <p>Informações e Curiosidades interessantes sobre o mundo da tecnologia!</p>
+    </header>
+    <nav>
+    <a href="#">Home</a>
+    <a href="#">Notícias!</a>
+    <a href="#">Fale Conosco!</a>
+    </nav>
+    <main>
+    <article>
+    <br>
+    <h1>A HISTÓRIA DO MASCOTE DO ANDROID!</h1>
+    <br>
+    <p>
+    A história do <strong>Android</strong>, não é a toa que vemos em quase todos os celulares ou podemos dizer <abbr title="Em tradução literal, significa 'telefone inteligente' Atualmente, eles contam com inúmeros recursos, ao contrário dos celulares antigos, que só serviam para realizar e receber chamadas e SMS">Smartphones</abbr> o sistema mantido pelo google é um dos mais utilizados no mundo, neste artigo vamos falar sobre esse sistema operacional com um mascote chamativo e fofinho, Veja:
+    </p>
+    <br>
+    <br>
+    <h2>A PRIMEIRA VERSÃO DO SISTEMA</h2>
+    <br>
+    <p>A primeira tentativa Foi feita por: <a href="https://danmorrill.org" target="_blank" rel="noopener noreferrer"><strong>Dan morril </strong>🔗</a> em 2007 um Desenvolvedor, Ele fala que criou uma conta no <a href="https://inkscape.org" target="_blank" rel="noopener noreferrer"><abbr title="Um software livre para a vetorização de imagens!"><strong>inkscape </strong>🔗</abbr></a> e criou sua própria versão de robô. O objetivo era apenas personificar o sistema apenas para a a sua equipe, não existia nenhuma solicitação da empresa para a criação de um mascote.</p>
+    <div>
+    <picture><source media="(max-width: 670px)" srcset="imagens/dan-droids-pq.png"><img src="imagens/dan-droids.png" alt=""></picture>
+    <p>Esta seria a primeira versão do mascote em homenagem ao seu criador, Estes são os <strong> Dandroids</strong></p>
+    </div>
+    <br>
+    <h2>SURGE UM NOVO MASCOTE</h2>
+    <br>
+    <p>A ideia de ter um mascote para o sistema foi amadurecendo e a resposabilidade de criar um mascote que gerasse uma identificação com quem o visse de modo que o mascote possui-a poucos traços e que faria que você se lembrasse dele mais facilmente que fosse <strong>Marcante</strong>, Assim foi criado o <strong>BUGDROID</strong> por: <a href="https://www.irinablok.com" target="_blank" rel="noopener noreferrer"><strong>irina Blok </strong>🔗 </a>:</p>
+    <br>
+        <div>
+        <picture><source media ="(max-width: 670px)" srcset="imagens/irina-blok-pq.jpg" alt=""><img src="imagens/irina-blok.jpg" alt=""></picture>
+        <br>
+        <br>
+        <p>Irina Blok é designer gráfica e artista. Ela é mais conhecida pela criação do logotipo do Android, incluindo seu ícone de robô verde</p>
+        </div>
+        <br>
+        <div>
+        <picture><img src="imagens/bugdroid.png" alt=""></picture>
+        <br>
+        <p>A principal inspiração para os traços do novo Bugdroid veio daqueles bonequinhos que ilustram portas de banheiro para indicar o gênero de cada porta. Conta a lenda que a artista estava criando em sua mesa no escritório do Google e olhou para o lado dos banheiros e a identificação foi imediata: simples, limpo, objetivo.</p>
+        </div>
+        <br>
+        <br>
+        <div id="id1">
+        <iframe width="900" height="550" src="https://www.youtube.com/embed/l2UDgpLz20M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <br>
+        <br>
+        <aside>
+        <h2>QUER APRENDER MAIS?</h2>
+        <br>
+        <ul id="ulp1">
+        <li>Curiosidade interessante sobre o sistema: Ele foi nomeado em ordem alfabética com nomes de doces da versão 1.5 até a 9.0</li>
+        </ul>
+        <br>
+        <ul id="ullist1">
+        <li>1.5 -<abbr title="Bolinho"> Cupcake</abbr></li>
+        <li>1.6 -<abbr title="Rosquinha"> Donut</abbr></li>
+        <li>3.0 -<abbr title="Bomba"> Eclair</abbr></li>
+        <li>2.2 - <abbr title="Iorgute congelado">Frovo</abbr></li>
+        <li>2.3 - <abbr title="Biscoito de gengibre">Gingerbread</abbr></li>
+        <li>3.0 - <abbr title="Favo de mel">Honeycomber</abbr></li>
+        <li>4.0 - <abbr title="Sorvete">Icecream</abbr></li>
+        <li>4.1 - <abbr title="Jujuba">jelly Bean</abbr></li>
+        <li>4.4 - <abbr title="KitKat">KitKat</abbr></li>
+        <li>5.0 - <abbr title="Pirulito">Lolipop</abbr></li>
+        <li>6.0 - <abbr title="Marshmallow">Marshmallow</abbr></li>
+        <li>7.0 - <abbr title="torronw">Nougat</abbr></li>
+        <li>8.0 - <abbr title="Oreo">Oreo</abbr></li>
+        <li>9.0 - <abbr title="Torta">Pie</abbr></li>
+        </ul>
+        <br>
+        <section>
+        <p>Infelizmente, o <strong>Android Q</strong> não existiu, pois o Google resolveu pôr fim a essa divertida prática e começou a usar numerações, o que deu origem ao <Strong>Android 10</Strong>.</p>
+        <br>
+        <p>Acesse aqui o site <a href="https://www.android.com/intl/pt-BR_br/history" target="_blank" rel="noopener noreferrer"><strong>Android History</strong></a> para conhecer a sequência das versões "adocicadas" e o que cada uma trouxe para o sistema Android.</p>
+        </section>
+    </article>
+    <br>
+    <p id="pfora">Então é isso! Espero que você tenha gostado do nosso artigo com essa curiosidade sobre o sistema Android e seu simpático mascote.</p>
+    </main>
+    <br>
+    <footer><p>Site criado por <a href="https://www.youtube.com/channel/UCJ4e0UZzVfrMwoA2xxO4xfw" target="_blank" rel="noopener noreferrer">Professor guanabara 🔗</a></p></footer>
+</body>
+</html>
