@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+body.light-theme {
+  background-color: #fff; /* cor de fundo - light theme */
+  color: #000; /* cor do texto - light theme */
+}
+
+body.dark-theme {
+  background-color: #333; /* cor de fundo - dark theme */
+  color: #fff; /* cor do texto - dark theme */
+}
+
+    </style>
+  </head>
+  <body>
+
+    <button id="theme-toggle">Toggle Theme</button>
+
+
+      <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+themeToggle.addEventListener('click', function() {
+  if (body.classList.contains('light-theme')) {
+    body.classList.remove('light-theme');
+    body.classList.add('dark-theme');
+  } else {
+    body.classList.remove('dark-theme');
+    body.classList.add('light-theme');
+  }
+});
+      </script>
+  </body>
+</html>
