@@ -3,7 +3,7 @@
   overflow-y: hidden;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* padding and border are included in the width and height */
+  box-sizing: border-box;
 }
 
 body.dark-theme {
@@ -15,7 +15,7 @@ body.light-theme {
 }
 
 #container0 {
-  margin: 3% auto;
+  margin: 2.3% auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,19 +23,20 @@ body.light-theme {
 }
 
 #GameContainer {
-  position relative;
-  width: 1250px;
-  height: 700px;
+  position: relative;
+  width: 1500px;
+  height: 750px;
   margin: 20px auto;
   border-radius: 2rem;
   overflow: hidden;
   background-color: black;
 }
 
-#GameArea {
+canvas#GameArea {
   display: block;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 #ScoreArea {
@@ -44,7 +45,7 @@ body.light-theme {
   font-weight: bolder;
   text-align: center;
   color: rgba(0, 255, 0);
-  z-index: 2;
+  z-index: 4;
 }
 
 #ScoreValue {
@@ -63,29 +64,7 @@ body.light-theme {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     font-size: 10rem;
-    text-align: center;
     color: rgb(0, 255, 0);
-    /*display: none*/
-}
-
-#StartedMessage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-shadow: 0px 0px 0.5rem aqua;
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: bolder;
-  font-size: 4rem;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 5s steps(50), blink 2s step-end;
-  white-space: nowrap;
-  opacity: 1;
-  animation: fadeout 2s ease-out 0.5s forwards;
-  z-index: 2;
-  color: rgba(255, 0, 0, 1);
-  /*display: none;*/
 }
 
 @keyframes fadeout {
@@ -95,38 +74,37 @@ body.light-theme {
   }
 }
 
-#StartArea {
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #StartButton {
+  font-family: Monospace;
   background-color: rgb(0, 255, 0);
-  border: none;
   height: 4rem;
   width: 10rem;
   font-size: 1.5rem;
+  border: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
 }
 
 #StartButton:hover {
-  box-shadow: 0px 0px 10px 1px rgb(134, 255, 107);
-  transform: scale(1.05);
-  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 0px 0.5rem 0.5rem rgb(135, 255, 110);
+  transform: box-shadow 0.5s ease-in-out;
 }
 
 @keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
@@ -145,14 +123,12 @@ body.light-theme {
   transform: translate(-50%, -50%);
   font-size: 5rem;
   color: red;
-  font-family: "Audiowide", sans-serif;
+  font-family: Monospace, sans-serif;
   text-align: center;
   transform: translate(-50%, -50%);
   animation: typing 5s steps(50), blink 2s step-end;
   white-space: nowrap;
-  z-index: 2;
   display: none;
-
 }
 
 #ContinueGame {
@@ -161,25 +137,24 @@ body.light-theme {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 250px;
-  height: 100px;
+  width: 20rem;
+  height: 5rem;
   font-size: 30px;
   border-radius: 10px;
   font-family: "Audiowide", sans-serif;
   font-weight: bolder;
   color: rgb(255, 0, 0);
   background-color: rgb(0, 0, 255);
+  border: none;
   display: none;
 }
 
 #ContinueGame:hover {
-    width: 260px;
-    height: 110px;
-    font-size: 32px;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
+  transform: translate(-50%, -50%) scale(1.05)  ;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-.overlay:not(.negado) {
-    filter: blur(5%);
+.GameOverOverlay:not(.end) {
+  filter: blur(10%);
 }

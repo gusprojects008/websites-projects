@@ -3,17 +3,16 @@ const contexto = area.getContext("2d");
 const size = 30;
 const scorediv = document.getElementById("ScoreArea");
 const score = document.getElementById("ScoreValue")
-const audioeat = new Audio("/SnakeGame/audio/SnapInsta.io - Minecraft Comendo - Efeito Sonoro (128 kbps).mp3");
-const audiobackground = new Audio("/SnakeGame/audio/audiobackground.mp3");
-const audiocountdown = new Audio("/SnakeGame/audio/SnapInsta.io - Contagem Regressiva 3 Segundos (128 kbps).mp3")
-let go = document.getElementById("StartedMessage");
+const audioeat = new Audio("/WebsitesProjects/SnakeGame/audio/SnapInsta.io - Minecraft Comendo - Efeito Sonoro (128 kbps).mp3");
+const audiobackground = new Audio("/WebsitesProjects/SnakeGame/audio/audiobackground.mp3");
+const audiocountdown = new Audio("/WebsitesProjects/SnakeGame/audio/SnapInsta.io - Contagem Regressiva 3 Segundos (128 kbps).mp3")
 let snakeSpeed = 100;
 
 //xarea = 1250;
 //yarea = 700;
 
-xarea = 1250;
-yarea = 700;
+xarea = 1500;
+yarea = 750;
 contexto.fillRect(0, 0, xarea, yarea);
 
     const snake = [
@@ -112,46 +111,35 @@ const randomNumber = (min, max) => {
     };
 
     const checkcollision = () => {
-      const head = snake[snake.length - 1]
-      const LimitCanvasX = xarea;
-      const LimitCanvasY = yarea;
-      let gameoveralert = document.getElementById("GameOver");
-      let btn = document.getElementById("ContinueGame");
-      let overlay = document.getElementById("overlay");
-
-      const CollisionLimit = (head.x < 0 || head.x > LimitCanvasX || head.y < 0 || head.y > LimitCanvasX) && (head.x < 0 || head.x > LimitCanvasY || head.y < 0 || head.y > LimitCanvasY);
-
-      if (CollisionLimit) {
-         gameoveralert.style.display = "block";
-         btn.style.display = "block";
-         area.classList.add("overlay");
-         score.classList.add("overlay");
-         scorediv.classList.add("overlay");
-         go.classList.add("overlay");            
-      };
-      };
+          const head = snake[snake.length - 1]
+          let gameoveralert = document.getElementById("GameOver");
+          let btnContinue = document.getElementById("ContinueGame");
+          const CollisionLimit = head.x < 0 || head.x + size > xarea || head.y < 0 || head.y + size > yarea;
+          if (CollisionLimit) {
+             gameoveralert.style.display = "block";
+             btnContinue.style.display = "block";
+             clearTimeout(loopid);
+             return true;
+             }
+          return false;
+         };
 
     const incrementScore = () => {
     score.innerText = parseInt(score.innerText) +1
     }
     function timeStart() {
-      let btnStart = document.getElementById("StartButton");
-      let timeregressive = document.getElementById("TimeRegressive");
-      let count = 4;
-      btnStart.style.display = "none";
-      let countdown = setInterval (() => {
-          audiocountdown.play();
-          count--
-          timeregressive.textContent = count;
-          if (count === 0) {
-             clearInterval(countdown);
-             timeregressive.style.display = "none"; 
-             go.textContent = "VAMOS LÁ!...";
-             go.classList.add("LetsGo");
-             //go.classList.remove("LetsGo");
-             //go.innerHTML = "";
-             gameloop();
-          }
+     let btnStart = document.getElementById("StartButton").style.display = "none";
+     let timeregressive = document.getElementById("TimeRegressive");
+     let count = 4;
+     let countdown = setInterval (() => {
+       audiocountdown.play();
+       count--
+       timeregressive.textContent = count;
+       if (count === 0) {
+          clearInterval(countdown);
+          timeregressive.style.display = "none"; 
+          gameloop();
+          };
       }, 1000);
     };
 

@@ -22,11 +22,11 @@
 }
 
 .button-theme-dark { 
-  background-image: url("/SnakeGame/images/icons/lua-crescente.png");
+  background-image: url("/WebsitesProjects/SnakeGame/images/icons/lua-crescente.png");
 }
 
 .button-theme-light {
-  background-image: url("/SnakeGame/images/icons/sol-amarelo.png");
+  background-image: url("/WebsitesProjects/SnakeGame/images/icons/sol-amarelo.png");
 }
 
 @media (max-width: 600px) {

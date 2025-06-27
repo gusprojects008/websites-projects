@@ -12,21 +12,16 @@
     <div id="container0">
       <p id="ScoreArea">PONTOS: <span id="ScoreValue">0</span></p>
       <div id="GameContainer">
-        <canvas id="GameArea" width=1250 height=700></canvas>
+        <canvas id="GameArea" width=1500 height=750></canvas>
         <div id="TimeRegressive"></div>
         <p><span id="StartedMessage"></span></p>
 
-        <div id="GameOverArea" class="overlay negado">
-        <span id="GameOver" class="overlay negado">GAME OVER!</span>
-        <button id="ContinueGame" class="overlay negado" onclick="Continue()">CONTINUAR</button>
-      </div>
-    
-      <div id="StartArea">
-        <button id="StartButton" class="StartButton" onclick="timeStart()"><span>Start</span></button>
-      </div>
+        <div id="GameOverArea" class="GameOverOverlay end">
+        <span id="GameOver" class="GameOverOverlay end">GAME OVER!</span>
+        <button id="ContinueGame" class="GameOverOverlay end" onclick="Continue()">CONTINUAR</button>
+        <button id="StartButton" class="StartButton" onclick="timeStart()">Start</button>
     </div>
-
-    <script src="/WebsitesProject/SnakeGame/scripts/jogodasnake.js"></script>
-    <script src="/WebsitesProject/SnakeGame/scripts/toggle-theme.js"></script>
+    <script src="/WebsitesProjects/SnakeGame/scripts/jogodasnake.js"></script>
+    <script src="/WebsitesProjects/SnakeGame/scripts/toggle-theme.js"></script>
 </body>
 </html>
