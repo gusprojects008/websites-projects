@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>Vulnerable database web</title>
-    <link rel="stylesheet" href="/WebsitesProjects/VulnerableDbWeb/styles/style.css">
+    <link rel="stylesheet" href="/WebsitesProjects/VulnerableWeb/SQLI/styles/style.css">
   </head>
   <body class="dark-mode">
     <h1>Test me</h1>
-    <form id="formContainer">
-      <input type="text" id="Username" placeholder="Type it name" required>
-      <textarea id="Comments" placeholder="Comment"></textarea>
-      <button id="SendData">Submit</button><br>
+    <form id="form-container">
+      <input type="text" id="username" placeholder="Type it name" required>
+      <textarea id="user-comment" placeholder="Comment"></textarea>
+      <button id="send-data">Submit</button><br>
+      <p id="users-comments"></p>
     </form>
+    <script src="/WebsitesProjects/VulnerableWeb/SQLI/scripts/script.js"></script>
    </body>
 </html>
