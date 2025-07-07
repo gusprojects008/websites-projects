@@ -4,10 +4,11 @@ const userComment = document.getElementById("user-comment");
 //let username = document.getElementById("username");
 //let userComment = document.getElementById("user-comment");
 const sendData = document.getElementById("send-data");
+const serverResponse = document.getElementById("server-response");
 const userComments = document.getElementById("users-comments");
 
-sendData.addEventListener("click", async (e) => {
-  e.preventDefault(); // Prevents form reloading
+sendData.addEventListener("click", async (event) => {
+  event.preventDefault(); // Prevents form reloading
   const usernameValue = username.value.trim();
   const userCommentValue = userComment.value.trim();
 
@@ -25,7 +26,22 @@ sendData.addEventListener("click", async (e) => {
   userDataValues.append("comment", userCommentValue);
   
   try {
-    const res = await fetch("/VulnerableWeb/SQLI/scripts/endpointToAPI")
-  } catch (error) {};
+      const response = await fetch("/VulnerableWeb/SQLI/scripts/endpointToAPI", {
+        method: "POST",
+        headers: {
+         "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: userDataValues.toString()
+      });
+
+    const responseText = await response.text();
+    if (response.ok) {
+       serverResponse.innerHTML = responseText;
+    } else {
+       serverResponse.innerHTML = responseText;
+      }
+  } catch (error) {
+      serverResponse.innerHTML = error;
+    };
 });
 
