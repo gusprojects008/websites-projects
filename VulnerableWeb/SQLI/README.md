@@ -6,7 +6,7 @@
 * The user cannot add a comment with a username that is already used or already exist.
 * The username can have a maximum of 32 characters,
 * The user comment can have a maximum of 32 characters.
-* The username will be added to users.db (along with the increment) and the comments will be added to comments.db (the comment will be added together with the associated username).
+* The username and comments associated with it will be added to database.db, each time the user adds a comment, a number associated with the username will be incremented (limit of 3 comments).
 
 *is validation on the frontend sufficient or efective?*
 

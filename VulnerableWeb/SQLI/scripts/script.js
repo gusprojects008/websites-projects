@@ -26,7 +26,7 @@ sendData.addEventListener("click", async (event) => {
   userDataValues.append("comment", userCommentValue);
   
   try {
-      const response = await fetch("/VulnerableWeb/SQLI/scripts/endpointToAPI", {
+      const response = await fetch("/scripts/endpointAPI", {
         method: "POST",
         headers: {
          "Content-Type": "application/x-www-form-urlencoded"
