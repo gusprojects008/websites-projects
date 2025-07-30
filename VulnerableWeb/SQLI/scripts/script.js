@@ -5,7 +5,13 @@ const userComment = document.getElementById("user-comment");
 //let userComment = document.getElementById("user-comment");
 const sendData = document.getElementById("send-data");
 const serverResponse = document.getElementById("server-response");
-const userComments = document.getElementById("users-comments");
+const usersComments = document.getElementById("users-comments");
+
+function UserCommentAdd(username, comment, element) {
+  const commentEl = document.createElement("p");
+  commentEl.innerHTML = `<b>${username}</b><br>${comment}`;
+  element.appendChild(commentEl);
+}
 
 sendData.addEventListener("click", async (event) => {
   event.preventDefault(); // Prevents form reloading
@@ -24,9 +30,12 @@ sendData.addEventListener("click", async (event) => {
   const userDataValues = new URLSearchParams();
   userDataValues.append("username", usernameValue);
   userDataValues.append("comment", userCommentValue);
-  
+
   try {
-      const response = await fetch("/scripts/endpointAPI", {
+      //const response = await fetch("http://127.0.0.1:8001/server_api/scripts/endpointAPI", {
+      const response = await fetch("http://192.168.0.3:8001/server_api/scripts/endpointAPI", {
+      //const response = await fetch("192.168.0.3:8001/server_api/scripts/endpointAPI", {
+      //const response = await fetch("/server_api/scripts/endpointAPI", {
         method: "POST",
         headers: {
          "Content-Type": "application/x-www-form-urlencoded"
@@ -34,14 +43,18 @@ sendData.addEventListener("click", async (event) => {
         body: userDataValues.toString()
       });
 
-    const responseText = await response.text();
-    if (response.ok) {
-       serverResponse.innerHTML = responseText;
+    const APIresponse = await response.json();
+
+    if (response.ok && APIresponse.status === "success") {
+       serverResponse.innerHTML = APIresponse.message;
+       UserCommentAdd(APIresponse.username, APIresponse.comment, usersComments);
     } else {
-       serverResponse.innerHTML = responseText;
-      }
+      serverResponse.innerHTML = APIresponse.message;
+    }
+
   } catch (error) {
-      serverResponse.innerHTML = error;
+    serverResponse.innerHTML = "Error! server connect failed or username already exists );";
+    console.log(error);
     };
 });
 

@@ -45,6 +45,13 @@ form button {
   color: green;
   font-size: 1.5rem;
   text-align: center;
-  margin: auto;
+  margin: 2rem auto;
+}
+
+#users-comments {
+  color: red;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem auto;
 }
 
