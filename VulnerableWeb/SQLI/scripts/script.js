@@ -33,7 +33,7 @@ sendData.addEventListener("click", async (event) => {
 
   try {
       //const response = await fetch("http://127.0.0.1:8001/server_api/scripts/endpointAPI", {
-      const response = await fetch("http://192.168.0.3:8001/server_api/scripts/endpointAPI", {
+      const response = await fetch("http://192.168.0.9:8001/server_api/scripts/endpointAPI", {
       //const response = await fetch("192.168.0.3:8001/server_api/scripts/endpointAPI", {
       //const response = await fetch("/server_api/scripts/endpointAPI", {
         method: "POST",
@@ -58,3 +58,24 @@ sendData.addEventListener("click", async (event) => {
     };
 });
 
+async function loadComments() {
+  try {
+    const response = await fetch("http://192.168.0.9:8001/server_api/scripts/list_comments");
+    const data = await response.json();
+    if (data.status !== "success") {
+       console.log(response, data);
+       return
+    }
+    usersComments.innerHTML = "";
+    data.message.forEach(comment_username => {
+      UserCommentAdd(comment_username.username, comment_username.comment, usersComments);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadComments()
+  setInterval(loadComments, 2000)
+})

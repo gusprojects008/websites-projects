@@ -10,7 +10,6 @@ DATABASE_PATH = os.path.join(BASE_DIR, "database.db")
 
 #print(BASE_DIR, DATABASE_PATH)
 
-
 @csrf_exempt
 def endpoint_api(request):
 
@@ -56,3 +55,18 @@ def endpoint_api(request):
     }
  
     return JsonResponse(response)
+
+def list_comments(request):
+    if request.method != "GET":
+       return JsonResponse({"status": "error", "message": "Bad method );"})
+
+    db_connection = sqlite3.connect(DATABASE_PATH)
+    db_cursor = db_connection.cursor()
+    
+    db_cursor.execute("SELECT username_count, comment FROM comments")
+    rows = db_cursor.fetchall()
+    db_connection.close()
+
+    comments_response = [{"username": username, "comment": comment} for username, comment in rows]
+
+    return JsonResponse({"status": "success", "message": comments_response})
