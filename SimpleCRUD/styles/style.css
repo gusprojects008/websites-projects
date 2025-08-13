@@ -1,0 +1,23 @@
+body{
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: green;
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+}
+header {
+}
+main {
+}
+#userForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#userForm button {
+  font-size: 2rem;
+  width: 6rem;
+  height: 2.5rem;
+}
