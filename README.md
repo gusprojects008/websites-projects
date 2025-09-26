@@ -1,4 +1,4 @@
 # Website Links
-## [Simple Snake Game](https://gusprojects008.github.io/WebsitesProjects/SnakeGame)
-## [Information Security](https://gusprojects008.github.io/WebsitesProjects/InformationSecurity)
-## [WebShop](./WebShop)
+## [Simple Snake Game](./snake-game)
+## [Information Security](./information-security)
+## [WebShop](./webshop)
